@@ -8,6 +8,7 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const header = document.querySelector(".header");
+const footer = document.querySelector(".footer");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -36,6 +37,7 @@ document.addEventListener("keydown", function (e) {
 // Cookie message
 const message = document.createElement("div");
 message.classList.add("cookie-message");
+message.style.backgroundColor = "#37383d";
 message.innerHTML =
-  "We use cookies for improvmend functionality and analytics<button class='btn btn--close-cookie'>Got it!</button>";
-// header.prepend(message);
+  "We use cookies for improvmend functionality and analytics.<button class='btn btn--close-cookie'>Got it!</button>";
+footer.after(message);
