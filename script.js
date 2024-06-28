@@ -40,7 +40,10 @@ message.classList.add("cookie-message");
 message.style.backgroundColor = "#37383d";
 message.innerHTML =
   "We use cookies for improvmend functionality and analytics.<button class='btn btn--close-cookie'>Got it!</button>";
-footer.after(message);
+footer.append(message);
 document.querySelector(".btn--close-cookie").addEventListener("click", () => {
   message.remove();
 });
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+console.log(getComputedStyle(message).height);
