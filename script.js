@@ -41,3 +41,6 @@ message.style.backgroundColor = "#37383d";
 message.innerHTML =
   "We use cookies for improvmend functionality and analytics.<button class='btn btn--close-cookie'>Got it!</button>";
 footer.after(message);
+document.querySelector(".btn--close-cookie").addEventListener("click", () => {
+  message.remove();
+});
