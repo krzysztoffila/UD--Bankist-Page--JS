@@ -46,4 +46,9 @@ document.querySelector(".btn--close-cookie").addEventListener("click", () => {
 });
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
-console.log(getComputedStyle(message).height);
+// Smooth scrolling
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+btnScrollTo.addEventListener("click", (e) => {
+  section1.scrollIntoView({ behavior: "smooth" });
+});
