@@ -42,7 +42,9 @@ message.innerHTML =
   "We use cookies for improvmend functionality and analytics.<button class='btn btn--close-cookie'>Got it!</button>";
 footer.append(message);
 document.querySelector(".btn--close-cookie").addEventListener("click", () => {
-  message.remove();
+  setTimeout(() => {
+    message.remove();
+  }, 500);
 });
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
@@ -51,4 +53,12 @@ const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 btnScrollTo.addEventListener("click", (e) => {
   section1.scrollIntoView({ behavior: "smooth" });
+});
+// Page navigation
+document.querySelectorAll(".nav__link").forEach(function (el) {
+  el.addEventListener("click", function (e) {
+    e.preventDefault();
+    const id = this.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  });
 });
