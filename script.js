@@ -1,8 +1,5 @@
 "use strict";
-
 ///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
@@ -16,7 +13,8 @@ const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
 const nav = document.querySelector("nav");
-
+///////////////////////////////////////
+// Modal window
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -41,8 +39,8 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
-// Cookie message
 
+// Cookie message
 message.classList.add("cookie-message");
 message.style.backgroundColor = "#37383d";
 message.innerHTML =
@@ -55,8 +53,8 @@ document.querySelector(".btn--close-cookie").addEventListener("click", () => {
 });
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
-// Smooth scrolling
 
+// Smooth scrolling
 btnScrollTo.addEventListener("click", (e) => {
   section1.scrollIntoView({ behavior: "smooth" });
 });
@@ -73,7 +71,6 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 
 // Tabbed compoennts
-
 tabsContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".operations__tab");
 
@@ -92,7 +89,6 @@ tabsContainer.addEventListener("click", function (e) {
 });
 
 // Menu fade animation
-
 const handleHover = function (e) {
   if (e.target.classList.contains("nav__link")) {
     const link = e.target;
